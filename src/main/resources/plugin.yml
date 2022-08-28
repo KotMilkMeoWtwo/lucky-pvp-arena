@@ -1,0 +1,8 @@
+name: LuckyBlockBattle
+version: '${project.version}'
+main: ru.meowland.Main
+api-version: 1.16
+prefix: lbb
+authors: [ KotMilkMeoW ]
+description: game mode for minecraft
+website: meowland.ru
