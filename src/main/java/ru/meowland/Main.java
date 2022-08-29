@@ -75,25 +75,19 @@ public final class Main extends JavaPlugin implements Listener {
                         break;
                 }
                 */
-                int rand1 = (int) (Math.random()*5);
-                switch (rand1){
-                    case (0):
-                        break;
-                    case (1):
-                        break;
-                    case (2):
-                        break;
-                    case (3):
-                        break;
-                    case (4):
-                        for(int i = 0; i < getConfig().getInt("lb5.items_count"); i++){
-                            Material material = Material.valueOf(getConfig().getString("lb5.items." + i + "item"));
-                            ItemStack item = setName(new ItemStack(material, 1), getConfig().getString("lb5.items." + i + "name"));
-                            p.getInventory().addItem(item);
-                            break;
-                        }
-                        break;
+                int rand1 = (int) (Math.random()* getConfig().getInt("lb5.items_count"));
+                Material material = Material.valueOf(getConfig().getString("lb5.items." + rand1 + "item"));
+                ItemStack item = setName(new ItemStack(material, 1), getConfig().getString("lb5.items." + rand1 + "name"));
+                p.getInventory().addItem(item);
+                /*
+                for(int i = 0; i < getConfig().getInt("lb5.items_count"); i++){
+                    Material material = Material.valueOf(getConfig().getString("lb5.items." + i + "item"));
+                    ItemStack item = setName(new ItemStack(material, 1), getConfig().getString("lb5.items." + i + "name"));
+                    p.getInventory().addItem(item);
+                    break;
                 }
+                 */
+
             }
         }
     }
