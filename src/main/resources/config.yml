@@ -533,7 +533,7 @@ lb4:
 lb5:
   items_count: 10
   items:
-    1:
+    0:
       item: DIAMOND_SWORD
       name: god sword
       potion: false
@@ -546,11 +546,24 @@ lb5:
         PROTECTION_ENVIRONMENTAL: 0
         PROTECTION_FIRE: 0
         THORNS: 0
-    2:
+    1:
       item:
       name:
       potion: false
       enchants:
+        ARROW_DAMAGE: 0
+        ARROW_FIRE: 0
+        DAMAGE_ALL: 0
+        FIRE_ASPECT: 0
+        KNOCKBACK: 0
+        PROTECTION_ENVIRONMENTAL: 0
+        PROTECTION_FIRE: 0
+        THORNS: 0
+    2:
+      item:
+        name:
+        potion: false
+        enchants:
         ARROW_DAMAGE: 0
         ARROW_FIRE: 0
         DAMAGE_ALL: 0
@@ -564,14 +577,14 @@ lb5:
         name:
         potion: false
         enchants:
-        ARROW_DAMAGE: 0
-        ARROW_FIRE: 0
-        DAMAGE_ALL: 0
-        FIRE_ASPECT: 0
-        KNOCKBACK: 0
-        PROTECTION_ENVIRONMENTAL: 0
-        PROTECTION_FIRE: 0
-        THORNS: 0
+          ARROW_DAMAGE: 0
+          ARROW_FIRE: 0
+          DAMAGE_ALL: 0
+          FIRE_ASPECT: 0
+          KNOCKBACK: 0
+          PROTECTION_ENVIRONMENTAL: 0
+          PROTECTION_FIRE: 0
+          THORNS: 0
     4:
       item:
         name:
@@ -618,7 +631,7 @@ lb5:
         enchants:
           ARROW_DAMAGE: 0
           ARROW_FIRE: 0
-          DAMAGE_ALL: 0
+            DAMAGE_ALL: 0
           FIRE_ASPECT: 0
           KNOCKBACK: 0
           PROTECTION_ENVIRONMENTAL: 0
@@ -631,26 +644,13 @@ lb5:
         enchants:
           ARROW_DAMAGE: 0
           ARROW_FIRE: 0
-            DAMAGE_ALL: 0
-          FIRE_ASPECT: 0
-          KNOCKBACK: 0
-          PROTECTION_ENVIRONMENTAL: 0
-          PROTECTION_FIRE: 0
-          THORNS: 0
-    9:
-      item:
-        name:
-        potion: false
-        enchants:
-          ARROW_DAMAGE: 0
-          ARROW_FIRE: 0
           DAMAGE_ALL: 0
           FIRE_ASPECT: 0
           KNOCKBACK: 0
           PROTECTION_ENVIRONMENTAL: 0
           PROTECTION_FIRE: 0
           THORNS: 0
-    10:
+    9:
       item:
         name:
         potion: false

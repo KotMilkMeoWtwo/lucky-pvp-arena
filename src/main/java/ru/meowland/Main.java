@@ -14,6 +14,8 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 public final class Main extends JavaPlugin implements Listener {
@@ -33,7 +35,10 @@ public final class Main extends JavaPlugin implements Listener {
         Player killer = p.getKiller();
 
         if(killer != null){
-            ItemStack itemStack = new ItemStack(setName( new ItemStack(Material.DIAMOND_BLOCK, 1, (short) 0), ChatColor.BLUE + "Lucky block lvl 5"));
+            List<String> desc = new ArrayList<>();
+            desc.add(ChatColor.DARK_GRAY + "Выпадает: " + ChatColor.DARK_BLUE + "EPIC" + ChatColor.DARK_GRAY + "вещи");
+            desc.add(ChatColor.DARK_GRAY + "Выпадает: " + ChatColor.GOLD + "LEGENDARY" + ChatColor.DARK_GRAY + "вещи");
+            ItemStack itemStack = new ItemStack(setName( new ItemStack(Material.DIAMOND_BLOCK, 1, (short) 0), ChatColor.BLUE + "Lucky block lvl 5", desc));
             killer.getInventory().addItem(itemStack);
             killer.sendMessage("u get diamond");
         }
@@ -76,6 +81,9 @@ public final class Main extends JavaPlugin implements Listener {
                 }
                 */
                 int rand1 = (int) (Math.random()* getConfig().getInt("lb5.items_count"));
+                getLogger().info(getConfig().getString("lb5.items." + rand1 + "item"));
+                getLogger().info(String.valueOf(rand1));
+                getLogger().info(getConfig().getString("lb5.items_count"));
                 Material material = Material.valueOf(getConfig().getString("lb5.items." + rand1 + "item"));
                 ItemStack item = setName(new ItemStack(material, 1), getConfig().getString("lb5.items." + rand1 + "name"));
                 p.getInventory().addItem(item);
@@ -97,6 +105,15 @@ public final class Main extends JavaPlugin implements Listener {
         ItemMeta m = is.getItemMeta();
         if (m != null) {
             m.setDisplayName(name);
+        }
+        is.setItemMeta(m);
+        return is;
+    }
+    public ItemStack setName(ItemStack is, String name, List<String> desc){
+        ItemMeta m = is.getItemMeta();
+        if (m != null) {
+            m.setDisplayName(name);
+            m.setLore(desc);
         }
         is.setItemMeta(m);
         return is;
