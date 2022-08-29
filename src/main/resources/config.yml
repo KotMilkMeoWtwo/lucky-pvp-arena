@@ -1,13 +1,665 @@
 lb1:
-  items_count: 20
+  items_count: 10
   items:
     1:
       item: WOODEN_SWORD
       name: wooden sword
+      potion: false
       enchants:
+        ARROW_DAMAGE: 0
+        ARROW_FIRE: 0
         DAMAGE_ALL: 1
-        PROTECTION_ENVIRONMENTAL: null
+        FIRE_ASPECT: 0
+        KNOCKBACK: 0
+        PROTECTION_ENVIRONMENTAL: 0
+        PROTECTION_FIRE: 0
+        THORNS: 0
     2:
       item:
       name:
-      enchants: null
+      potion: false
+      enchants:
+        ARROW_DAMAGE: 0
+        ARROW_FIRE: 0
+        DAMAGE_ALL: 0
+        FIRE_ASPECT: 0
+        KNOCKBACK: 0
+        PROTECTION_ENVIRONMENTAL: 0
+        PROTECTION_FIRE: 0
+        THORNS: 0
+    3:
+      item:
+        name:
+        potion: false
+        enchants:
+        ARROW_DAMAGE: 0
+        ARROW_FIRE: 0
+        DAMAGE_ALL: 0
+        FIRE_ASPECT: 0
+        KNOCKBACK: 0
+        PROTECTION_ENVIRONMENTAL: 0
+        PROTECTION_FIRE: 0
+        THORNS: 0
+    4:
+      item:
+        name:
+        potion: false
+        enchants:
+          ARROW_DAMAGE: 0
+          ARROW_FIRE: 0
+          DAMAGE_ALL: 0
+          FIRE_ASPECT: 0
+          KNOCKBACK: 0
+          PROTECTION_ENVIRONMENTAL: 0
+          PROTECTION_FIRE: 0
+          THORNS: 0
+    5:
+      item:
+        name:
+        potion: false
+        enchants:
+          ARROW_DAMAGE: 0
+          ARROW_FIRE: 0
+          DAMAGE_ALL: 0
+          FIRE_ASPECT: 0
+          KNOCKBACK: 0
+          PROTECTION_ENVIRONMENTAL: 0
+          PROTECTION_FIRE: 0
+          THORNS: 0
+    6:
+      item:
+        name:
+        potion: false
+        enchants:
+          ARROW_DAMAGE: 0
+          ARROW_FIRE: 0
+          DAMAGE_ALL: 0
+          FIRE_ASPECT: 0
+          KNOCKBACK: 0
+          PROTECTION_ENVIRONMENTAL: 0
+          PROTECTION_FIRE: 0
+          THORNS: 0
+    7:
+      item:
+        name:
+        potion: false
+        enchants:
+          ARROW_DAMAGE: 0
+          ARROW_FIRE: 0
+          DAMAGE_ALL: 0
+          FIRE_ASPECT: 0
+          KNOCKBACK: 0
+          PROTECTION_ENVIRONMENTAL: 0
+          PROTECTION_FIRE: 0
+          THORNS: 0
+    8:
+      item:
+        name:
+        potion: false
+        enchants:
+          ARROW_DAMAGE: 0
+          ARROW_FIRE: 0
+           DAMAGE_ALL: 0
+          FIRE_ASPECT: 0
+          KNOCKBACK: 0
+          PROTECTION_ENVIRONMENTAL: 0
+          PROTECTION_FIRE: 0
+          THORNS: 0
+    9:
+      item:
+        name:
+        potion: false
+        enchants:
+          ARROW_DAMAGE: 0
+          ARROW_FIRE: 0
+          DAMAGE_ALL: 0
+          FIRE_ASPECT: 0
+          KNOCKBACK: 0
+          PROTECTION_ENVIRONMENTAL: 0
+          PROTECTION_FIRE: 0
+          THORNS: 0
+    10:
+      item:
+        name:
+        potion: false
+        enchants:
+          ARROW_DAMAGE: 0
+          ARROW_FIRE: 0
+          DAMAGE_ALL: 0
+          FIRE_ASPECT: 0
+          KNOCKBACK: 0
+          PROTECTION_ENVIRONMENTAL: 0
+          PROTECTION_FIRE: 0
+          THORNS: 0
+lb2:
+  items_count: 10
+  items:
+    1:
+      item: WOODEN_SWORD
+      name: wooden sword
+      potion: false
+      enchants:
+        ARROW_DAMAGE: 0
+        ARROW_FIRE: 0
+        DAMAGE_ALL: 1
+        FIRE_ASPECT: 0
+        KNOCKBACK: 0
+        PROTECTION_ENVIRONMENTAL: 0
+        PROTECTION_FIRE: 0
+        THORNS: 0
+    2:
+      item:
+      name:
+      potion: false
+      enchants:
+        ARROW_DAMAGE: 0
+        ARROW_FIRE: 0
+        DAMAGE_ALL: 0
+        FIRE_ASPECT: 0
+        KNOCKBACK: 0
+        PROTECTION_ENVIRONMENTAL: 0
+        PROTECTION_FIRE: 0
+        THORNS: 0
+    3:
+      item:
+        name:
+        potion: false
+        enchants:
+        ARROW_DAMAGE: 0
+        ARROW_FIRE: 0
+        DAMAGE_ALL: 0
+        FIRE_ASPECT: 0
+        KNOCKBACK: 0
+        PROTECTION_ENVIRONMENTAL: 0
+        PROTECTION_FIRE: 0
+        THORNS: 0
+    4:
+      item:
+        name:
+        potion: false
+        enchants:
+          ARROW_DAMAGE: 0
+          ARROW_FIRE: 0
+          DAMAGE_ALL: 0
+          FIRE_ASPECT: 0
+          KNOCKBACK: 0
+          PROTECTION_ENVIRONMENTAL: 0
+          PROTECTION_FIRE: 0
+          THORNS: 0
+    5:
+      item:
+        name:
+        potion: false
+        enchants:
+          ARROW_DAMAGE: 0
+          ARROW_FIRE: 0
+          DAMAGE_ALL: 0
+          FIRE_ASPECT: 0
+          KNOCKBACK: 0
+          PROTECTION_ENVIRONMENTAL: 0
+          PROTECTION_FIRE: 0
+          THORNS: 0
+    6:
+      item:
+        name:
+        potion: false
+        enchants:
+          ARROW_DAMAGE: 0
+          ARROW_FIRE: 0
+          DAMAGE_ALL: 0
+          FIRE_ASPECT: 0
+          KNOCKBACK: 0
+          PROTECTION_ENVIRONMENTAL: 0
+          PROTECTION_FIRE: 0
+          THORNS: 0
+    7:
+      item:
+        name:
+        potion: false
+        enchants:
+          ARROW_DAMAGE: 0
+          ARROW_FIRE: 0
+          DAMAGE_ALL: 0
+          FIRE_ASPECT: 0
+          KNOCKBACK: 0
+          PROTECTION_ENVIRONMENTAL: 0
+          PROTECTION_FIRE: 0
+          THORNS: 0
+    8:
+      item:
+        name:
+        potion: false
+        enchants:
+          ARROW_DAMAGE: 0
+          ARROW_FIRE: 0
+            DAMAGE_ALL: 0
+          FIRE_ASPECT: 0
+          KNOCKBACK: 0
+          PROTECTION_ENVIRONMENTAL: 0
+          PROTECTION_FIRE: 0
+          THORNS: 0
+    9:
+      item:
+        name:
+        potion: false
+        enchants:
+          ARROW_DAMAGE: 0
+          ARROW_FIRE: 0
+          DAMAGE_ALL: 0
+          FIRE_ASPECT: 0
+          KNOCKBACK: 0
+          PROTECTION_ENVIRONMENTAL: 0
+          PROTECTION_FIRE: 0
+          THORNS: 0
+    10:
+      item:
+        name:
+        potion: false
+        enchants:
+          ARROW_DAMAGE: 0
+          ARROW_FIRE: 0
+          DAMAGE_ALL: 0
+          FIRE_ASPECT: 0
+          KNOCKBACK: 0
+          PROTECTION_ENVIRONMENTAL: 0
+          PROTECTION_FIRE: 0
+          THORNS: 0
+lb3:
+  items_count: 10
+  items:
+    1:
+      item: WOODEN_SWORD
+      name: wooden sword
+      potion: false
+      enchants:
+        ARROW_DAMAGE: 0
+        ARROW_FIRE: 0
+        DAMAGE_ALL: 1
+        FIRE_ASPECT: 0
+        KNOCKBACK: 0
+        PROTECTION_ENVIRONMENTAL: 0
+        PROTECTION_FIRE: 0
+        THORNS: 0
+    2:
+      item:
+      name:
+      potion: false
+      enchants:
+        ARROW_DAMAGE: 0
+        ARROW_FIRE: 0
+        DAMAGE_ALL: 0
+        FIRE_ASPECT: 0
+        KNOCKBACK: 0
+        PROTECTION_ENVIRONMENTAL: 0
+        PROTECTION_FIRE: 0
+        THORNS: 0
+    3:
+      item:
+        name:
+        potion: false
+        enchants:
+        ARROW_DAMAGE: 0
+        ARROW_FIRE: 0
+        DAMAGE_ALL: 0
+        FIRE_ASPECT: 0
+        KNOCKBACK: 0
+        PROTECTION_ENVIRONMENTAL: 0
+        PROTECTION_FIRE: 0
+        THORNS: 0
+    4:
+      item:
+        name:
+        potion: false
+        enchants:
+          ARROW_DAMAGE: 0
+          ARROW_FIRE: 0
+          DAMAGE_ALL: 0
+          FIRE_ASPECT: 0
+          KNOCKBACK: 0
+          PROTECTION_ENVIRONMENTAL: 0
+          PROTECTION_FIRE: 0
+          THORNS: 0
+    5:
+      item:
+        name:
+        potion: false
+        enchants:
+          ARROW_DAMAGE: 0
+          ARROW_FIRE: 0
+          DAMAGE_ALL: 0
+          FIRE_ASPECT: 0
+          KNOCKBACK: 0
+          PROTECTION_ENVIRONMENTAL: 0
+          PROTECTION_FIRE: 0
+          THORNS: 0
+    6:
+      item:
+        name:
+        potion: false
+        enchants:
+          ARROW_DAMAGE: 0
+          ARROW_FIRE: 0
+          DAMAGE_ALL: 0
+          FIRE_ASPECT: 0
+          KNOCKBACK: 0
+          PROTECTION_ENVIRONMENTAL: 0
+          PROTECTION_FIRE: 0
+          THORNS: 0
+    7:
+      item:
+        name:
+        potion: false
+        enchants:
+          ARROW_DAMAGE: 0
+          ARROW_FIRE: 0
+          DAMAGE_ALL: 0
+          FIRE_ASPECT: 0
+          KNOCKBACK: 0
+          PROTECTION_ENVIRONMENTAL: 0
+          PROTECTION_FIRE: 0
+          THORNS: 0
+    8:
+      item:
+        name:
+        potion: false
+        enchants:
+          ARROW_DAMAGE: 0
+          ARROW_FIRE: 0
+            DAMAGE_ALL: 0
+          FIRE_ASPECT: 0
+          KNOCKBACK: 0
+          PROTECTION_ENVIRONMENTAL: 0
+          PROTECTION_FIRE: 0
+          THORNS: 0
+    9:
+      item:
+        name:
+        potion: false
+        enchants:
+          ARROW_DAMAGE: 0
+          ARROW_FIRE: 0
+          DAMAGE_ALL: 0
+          FIRE_ASPECT: 0
+          KNOCKBACK: 0
+          PROTECTION_ENVIRONMENTAL: 0
+          PROTECTION_FIRE: 0
+          THORNS: 0
+    10:
+      item:
+        name:
+        potion: false
+        enchants:
+          ARROW_DAMAGE: 0
+          ARROW_FIRE: 0
+          DAMAGE_ALL: 0
+          FIRE_ASPECT: 0
+          KNOCKBACK: 0
+          PROTECTION_ENVIRONMENTAL: 0
+          PROTECTION_FIRE: 0
+          THORNS: 0
+lb4:
+  items_count: 10
+  items:
+    1:
+      item: WOODEN_SWORD
+      name: wooden sword
+      potion: false
+      enchants:
+        ARROW_DAMAGE: 0
+        ARROW_FIRE: 0
+        DAMAGE_ALL: 1
+        FIRE_ASPECT: 0
+        KNOCKBACK: 0
+        PROTECTION_ENVIRONMENTAL: 0
+        PROTECTION_FIRE: 0
+        THORNS: 0
+    2:
+      item:
+      name:
+      potion: false
+      enchants:
+        ARROW_DAMAGE: 0
+        ARROW_FIRE: 0
+        DAMAGE_ALL: 0
+        FIRE_ASPECT: 0
+        KNOCKBACK: 0
+        PROTECTION_ENVIRONMENTAL: 0
+        PROTECTION_FIRE: 0
+        THORNS: 0
+    3:
+      item:
+        name:
+        potion: false
+        enchants:
+        ARROW_DAMAGE: 0
+        ARROW_FIRE: 0
+        DAMAGE_ALL: 0
+        FIRE_ASPECT: 0
+        KNOCKBACK: 0
+        PROTECTION_ENVIRONMENTAL: 0
+        PROTECTION_FIRE: 0
+        THORNS: 0
+    4:
+      item:
+        name:
+        potion: false
+        enchants:
+          ARROW_DAMAGE: 0
+          ARROW_FIRE: 0
+          DAMAGE_ALL: 0
+          FIRE_ASPECT: 0
+          KNOCKBACK: 0
+          PROTECTION_ENVIRONMENTAL: 0
+          PROTECTION_FIRE: 0
+          THORNS: 0
+    5:
+      item:
+        name:
+        potion: false
+        enchants:
+          ARROW_DAMAGE: 0
+          ARROW_FIRE: 0
+          DAMAGE_ALL: 0
+          FIRE_ASPECT: 0
+          KNOCKBACK: 0
+          PROTECTION_ENVIRONMENTAL: 0
+          PROTECTION_FIRE: 0
+          THORNS: 0
+    6:
+      item:
+        name:
+        potion: false
+        enchants:
+          ARROW_DAMAGE: 0
+          ARROW_FIRE: 0
+          DAMAGE_ALL: 0
+          FIRE_ASPECT: 0
+          KNOCKBACK: 0
+          PROTECTION_ENVIRONMENTAL: 0
+          PROTECTION_FIRE: 0
+          THORNS: 0
+    7:
+      item:
+        name:
+        potion: false
+        enchants:
+          ARROW_DAMAGE: 0
+          ARROW_FIRE: 0
+          DAMAGE_ALL: 0
+          FIRE_ASPECT: 0
+          KNOCKBACK: 0
+          PROTECTION_ENVIRONMENTAL: 0
+          PROTECTION_FIRE: 0
+          THORNS: 0
+    8:
+      item:
+        name:
+        potion: false
+        enchants:
+          ARROW_DAMAGE: 0
+          ARROW_FIRE: 0
+            DAMAGE_ALL: 0
+          FIRE_ASPECT: 0
+          KNOCKBACK: 0
+          PROTECTION_ENVIRONMENTAL: 0
+          PROTECTION_FIRE: 0
+          THORNS: 0
+    9:
+      item:
+        name:
+        potion: false
+        enchants:
+          ARROW_DAMAGE: 0
+          ARROW_FIRE: 0
+          DAMAGE_ALL: 0
+          FIRE_ASPECT: 0
+          KNOCKBACK: 0
+          PROTECTION_ENVIRONMENTAL: 0
+          PROTECTION_FIRE: 0
+          THORNS: 0
+    10:
+      item:
+        name:
+        potion: false
+        enchants:
+          ARROW_DAMAGE: 0
+          ARROW_FIRE: 0
+          DAMAGE_ALL: 0
+          FIRE_ASPECT: 0
+          KNOCKBACK: 0
+          PROTECTION_ENVIRONMENTAL: 0
+          PROTECTION_FIRE: 0
+          THORNS: 0
+lb5:
+  items_count: 10
+  items:
+    1:
+      item: DIAMOND_SWORD
+      name: god sword
+      potion: false
+      enchants:
+        ARROW_DAMAGE: 0
+        ARROW_FIRE: 0
+        DAMAGE_ALL: 3
+        FIRE_ASPECT: 1
+        KNOCKBACK: 0
+        PROTECTION_ENVIRONMENTAL: 0
+        PROTECTION_FIRE: 0
+        THORNS: 0
+    2:
+      item:
+      name:
+      potion: false
+      enchants:
+        ARROW_DAMAGE: 0
+        ARROW_FIRE: 0
+        DAMAGE_ALL: 0
+        FIRE_ASPECT: 0
+        KNOCKBACK: 0
+        PROTECTION_ENVIRONMENTAL: 0
+        PROTECTION_FIRE: 0
+        THORNS: 0
+    3:
+      item:
+        name:
+        potion: false
+        enchants:
+        ARROW_DAMAGE: 0
+        ARROW_FIRE: 0
+        DAMAGE_ALL: 0
+        FIRE_ASPECT: 0
+        KNOCKBACK: 0
+        PROTECTION_ENVIRONMENTAL: 0
+        PROTECTION_FIRE: 0
+        THORNS: 0
+    4:
+      item:
+        name:
+        potion: false
+        enchants:
+          ARROW_DAMAGE: 0
+          ARROW_FIRE: 0
+          DAMAGE_ALL: 0
+          FIRE_ASPECT: 0
+          KNOCKBACK: 0
+          PROTECTION_ENVIRONMENTAL: 0
+          PROTECTION_FIRE: 0
+          THORNS: 0
+    5:
+      item:
+        name:
+        potion: false
+        enchants:
+          ARROW_DAMAGE: 0
+          ARROW_FIRE: 0
+          DAMAGE_ALL: 0
+          FIRE_ASPECT: 0
+          KNOCKBACK: 0
+          PROTECTION_ENVIRONMENTAL: 0
+          PROTECTION_FIRE: 0
+          THORNS: 0
+    6:
+      item:
+        name:
+        potion: false
+        enchants:
+          ARROW_DAMAGE: 0
+          ARROW_FIRE: 0
+          DAMAGE_ALL: 0
+          FIRE_ASPECT: 0
+          KNOCKBACK: 0
+          PROTECTION_ENVIRONMENTAL: 0
+          PROTECTION_FIRE: 0
+          THORNS: 0
+    7:
+      item:
+        name:
+        potion: false
+        enchants:
+          ARROW_DAMAGE: 0
+          ARROW_FIRE: 0
+          DAMAGE_ALL: 0
+          FIRE_ASPECT: 0
+          KNOCKBACK: 0
+          PROTECTION_ENVIRONMENTAL: 0
+          PROTECTION_FIRE: 0
+          THORNS: 0
+    8:
+      item:
+        name:
+        potion: false
+        enchants:
+          ARROW_DAMAGE: 0
+          ARROW_FIRE: 0
+            DAMAGE_ALL: 0
+          FIRE_ASPECT: 0
+          KNOCKBACK: 0
+          PROTECTION_ENVIRONMENTAL: 0
+          PROTECTION_FIRE: 0
+          THORNS: 0
+    9:
+      item:
+        name:
+        potion: false
+        enchants:
+          ARROW_DAMAGE: 0
+          ARROW_FIRE: 0
+          DAMAGE_ALL: 0
+          FIRE_ASPECT: 0
+          KNOCKBACK: 0
+          PROTECTION_ENVIRONMENTAL: 0
+          PROTECTION_FIRE: 0
+          THORNS: 0
+    10:
+      item:
+        name:
+        potion: false
+        enchants:
+          ARROW_DAMAGE: 0
+          ARROW_FIRE: 0
+          DAMAGE_ALL: 0
+          FIRE_ASPECT: 0
+          KNOCKBACK: 0
+          PROTECTION_ENVIRONMENTAL: 0
+          PROTECTION_FIRE: 0
+          THORNS: 0

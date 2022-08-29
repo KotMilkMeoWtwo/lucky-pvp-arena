@@ -1,6 +1,5 @@
 package ru.meowland;
 
-import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.enchantments.Enchantment;
@@ -14,10 +13,7 @@ import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.plugin.java.JavaPlugin;
-import org.jetbrains.annotations.Contract;
-import org.jetbrains.annotations.NotNull;
 
-import java.io.File;
 import java.util.Objects;
 
 public final class Main extends JavaPlugin implements Listener {
@@ -37,7 +33,7 @@ public final class Main extends JavaPlugin implements Listener {
         Player killer = p.getKiller();
 
         if(killer != null){
-            ItemStack itemStack = new ItemStack(setName( new ItemStack(Material.DIAMOND, 1, (short) 0), ChatColor.BLUE + "Lucky block lvl 5"));
+            ItemStack itemStack = new ItemStack(setName( new ItemStack(Material.DIAMOND_BLOCK, 1, (short) 0), ChatColor.BLUE + "Lucky block lvl 5"));
             killer.getInventory().addItem(itemStack);
             killer.sendMessage("u get diamond");
         }
@@ -45,21 +41,21 @@ public final class Main extends JavaPlugin implements Listener {
 
     @EventHandler(priority = EventPriority.NORMAL)
     public void LuckBlockOpen(PlayerInteractEvent e){
-        if(e.getPlayer().getItemInHand().getType() == Material.DIAMOND){
+        if(e.getPlayer().getItemInHand().getType() == Material.DIAMOND_BLOCK){
             if(e.getAction() == Action.RIGHT_CLICK_AIR || e.getAction() == Action.RIGHT_CLICK_BLOCK){
                 Player p = e.getPlayer();
                 p.sendMessage("meow");
                 for(int i = 0; i < p.getInventory().getSize(); i++){
                     if(p.getInventory().getItem(i) != null){
-                        if(Objects.requireNonNull(p.getInventory().getItem(i)).getType() == Material.DIAMOND){
-                            ItemStack d = new ItemStack(setName(new ItemStack(Material.DIAMOND, 1), ChatColor.BLUE + "Lucky block lvl 5"));
+                        if(Objects.requireNonNull(p.getInventory().getItem(i)).getType() == Material.DIAMOND_BLOCK){
+                            ItemStack d = new ItemStack(setName(new ItemStack(Material.DIAMOND_BLOCK, 1), ChatColor.BLUE + "Lucky block lvl 5"));
                             p.getInventory().removeItem(d);
                             break;
                         }
                     }
 
                 }
-                //p.getInventory().removeItem(p.getInventory().getItem());
+                /*
                 int rand = (int) (Math.random()*3);
                 ItemStack p0 = new ItemStack(Material.DIAMOND_SWORD, 1);
                 p0.addUnsafeEnchantment(Enchantment.DAMAGE_ALL, 3);
@@ -76,6 +72,26 @@ public final class Main extends JavaPlugin implements Listener {
                         break;
                     case (2):
                         p.getInventory().addItem(p2);
+                        break;
+                }
+                */
+                int rand1 = (int) (Math.random()*5);
+                switch (rand1){
+                    case (0):
+                        break;
+                    case (1):
+                        break;
+                    case (2):
+                        break;
+                    case (3):
+                        break;
+                    case (4):
+                        for(int i = 0; i < getConfig().getInt("lb5.items_count"); i++){
+                            Material material = Material.valueOf(getConfig().getString("lb5.items." + i + "item"));
+                            ItemStack item = setName(new ItemStack(material, 1), getConfig().getString("lb5.items." + i + "name"));
+                            p.getInventory().addItem(item);
+                            break;
+                        }
                         break;
                 }
             }
