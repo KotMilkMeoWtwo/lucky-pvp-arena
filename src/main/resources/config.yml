@@ -1,0 +1,13 @@
+lb1:
+  items_count: 20
+  items:
+    1:
+      item: WOODEN_SWORD
+      name: wooden sword
+      enchants:
+        DAMAGE_ALL: 1
+        PROTECTION_ENVIRONMENTAL: null
+    2:
+      item:
+      name:
+      enchants: null

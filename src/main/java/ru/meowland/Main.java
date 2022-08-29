@@ -1,6 +1,7 @@
 package ru.meowland;
 
 import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.Player;
@@ -13,6 +14,8 @@ import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.plugin.java.JavaPlugin;
+import org.jetbrains.annotations.Contract;
+import org.jetbrains.annotations.NotNull;
 
 import java.io.File;
 import java.util.Objects;
@@ -22,13 +25,10 @@ public final class Main extends JavaPlugin implements Listener {
     @Override
     public void onEnable() {
         getLogger().info("meow");
+        saveDefaultConfig();
         getServer().getPluginManager().registerEvents(this, this);
         getConfig().options().copyDefaults(true);
         reloadConfig();
-    }
-
-    @Override
-    public void onDisable() {
     }
 
     @EventHandler(priority = EventPriority.NORMAL)
@@ -37,7 +37,7 @@ public final class Main extends JavaPlugin implements Listener {
         Player killer = p.getKiller();
 
         if(killer != null){
-            ItemStack itemStack = new ItemStack(setName( new ItemStack(Material.DIAMOND, 1, (short) 0), "Lucky block lvl 5"));
+            ItemStack itemStack = new ItemStack(setName( new ItemStack(Material.DIAMOND, 1, (short) 0), ChatColor.BLUE + "Lucky block lvl 5"));
             killer.getInventory().addItem(itemStack);
             killer.sendMessage("u get diamond");
         }
@@ -52,7 +52,7 @@ public final class Main extends JavaPlugin implements Listener {
                 for(int i = 0; i < p.getInventory().getSize(); i++){
                     if(p.getInventory().getItem(i) != null){
                         if(Objects.requireNonNull(p.getInventory().getItem(i)).getType() == Material.DIAMOND){
-                            ItemStack d = new ItemStack(setName(new ItemStack(Material.DIAMOND, 1), "Lucky block lvl 5"));
+                            ItemStack d = new ItemStack(setName(new ItemStack(Material.DIAMOND, 1), ChatColor.BLUE + "Lucky block lvl 5"));
                             p.getInventory().removeItem(d);
                             break;
                         }
@@ -81,6 +81,7 @@ public final class Main extends JavaPlugin implements Listener {
             }
         }
     }
+
 
     public ItemStack setName(ItemStack is, String name){
         ItemMeta m = is.getItemMeta();
