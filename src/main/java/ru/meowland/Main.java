@@ -86,13 +86,6 @@ public final class Main extends JavaPlugin implements Listener {
                 }
                 */
                 int rand1 = (int) (Math.random()* getConfig().getInt("lb5.items_count"));
-                getLogger().info(config.getString("lb5.items." + rand1 + ".item"));
-                getLogger().info(String.valueOf(rand1));
-                getLogger().info(config.getString("lb5"));
-                getLogger().info(config.getString("lb5.items_count"));
-                getLogger().info(config.getString("lb1"));
-                getLogger().info(Config.get("lb1"));
-                getLogger().info(String.valueOf(getConfig().getConfigurationSection("lb1")));
                 Material material = Material.valueOf(getConfig().getString("lb5.items." + rand1 + ".item"));
                 ItemStack item = setName(new ItemStack(material, 1), getConfig().getString("lb5.items." + rand1 + ".name"));
                 p.getInventory().addItem(item);
