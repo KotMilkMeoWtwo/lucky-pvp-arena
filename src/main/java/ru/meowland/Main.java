@@ -2,6 +2,7 @@ package ru.meowland;
 
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
+import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -13,6 +14,7 @@ import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.plugin.java.JavaPlugin;
+import ru.meowland.config.Config;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,13 +22,16 @@ import java.util.Objects;
 
 public final class Main extends JavaPlugin implements Listener {
 
+    FileConfiguration config = getConfig();
     @Override
     public void onEnable() {
-        getLogger().info("meow");
-        saveDefaultConfig();
         getServer().getPluginManager().registerEvents(this, this);
         getConfig().options().copyDefaults(true);
+        this.saveDefaultConfig();
+        FileConfiguration config = getConfig();
+        getConfig();
         reloadConfig();
+        this.getConfig();
     }
 
     @EventHandler(priority = EventPriority.NORMAL)
@@ -81,11 +86,15 @@ public final class Main extends JavaPlugin implements Listener {
                 }
                 */
                 int rand1 = (int) (Math.random()* getConfig().getInt("lb5.items_count"));
-                getLogger().info(getConfig().getString("lb5.items." + rand1 + "item"));
+                getLogger().info(config.getString("lb5.items." + rand1 + ".item"));
                 getLogger().info(String.valueOf(rand1));
-                getLogger().info(getConfig().getString("lb5.items_count"));
-                Material material = Material.valueOf(getConfig().getString("lb5.items." + rand1 + "item"));
-                ItemStack item = setName(new ItemStack(material, 1), getConfig().getString("lb5.items." + rand1 + "name"));
+                getLogger().info(config.getString("lb5"));
+                getLogger().info(config.getString("lb5.items_count"));
+                getLogger().info(config.getString("lb1"));
+                getLogger().info(Config.get("lb1"));
+                getLogger().info(String.valueOf(getConfig().getConfigurationSection("lb1")));
+                Material material = Material.valueOf(getConfig().getString("lb5.items." + rand1 + ".item"));
+                ItemStack item = setName(new ItemStack(material, 1), getConfig().getString("lb5.items." + rand1 + ".name"));
                 p.getInventory().addItem(item);
                 /*
                 for(int i = 0; i < getConfig().getInt("lb5.items_count"); i++){

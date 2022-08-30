@@ -16,7 +16,7 @@ lb1:
         THORNS: 0
     2:
       item:
-      name:
+      name: null
       potion: false
       enchants:
         ARROW_DAMAGE: 0
@@ -29,7 +29,7 @@ lb1:
         THORNS: 0
     3:
       item:
-        name:
+        name: null
         potion: false
         enchants:
         ARROW_DAMAGE: 0
@@ -42,7 +42,7 @@ lb1:
         THORNS: 0
     4:
       item:
-        name:
+        name: null
         potion: false
         enchants:
           ARROW_DAMAGE: 0
@@ -55,7 +55,7 @@ lb1:
           THORNS: 0
     5:
       item:
-        name:
+        name: null
         potion: false
         enchants:
           ARROW_DAMAGE: 0
@@ -68,7 +68,7 @@ lb1:
           THORNS: 0
     6:
       item:
-        name:
+        name: null
         potion: false
         enchants:
           ARROW_DAMAGE: 0
@@ -81,7 +81,7 @@ lb1:
           THORNS: 0
     7:
       item:
-        name:
+        name: null
         potion: false
         enchants:
           ARROW_DAMAGE: 0
@@ -94,12 +94,12 @@ lb1:
           THORNS: 0
     8:
       item:
-        name:
+        name: null
         potion: false
         enchants:
           ARROW_DAMAGE: 0
           ARROW_FIRE: 0
-           DAMAGE_ALL: 0
+          DAMAGE_ALL: 0
           FIRE_ASPECT: 0
           KNOCKBACK: 0
           PROTECTION_ENVIRONMENTAL: 0
@@ -119,18 +119,18 @@ lb1:
           PROTECTION_FIRE: 0
           THORNS: 0
     10:
-      item:
-        name:
-        potion: false
-        enchants:
-          ARROW_DAMAGE: 0
-          ARROW_FIRE: 0
-          DAMAGE_ALL: 0
-          FIRE_ASPECT: 0
-          KNOCKBACK: 0
-          PROTECTION_ENVIRONMENTAL: 0
-          PROTECTION_FIRE: 0
-          THORNS: 0
+      item: null
+      name: null
+      potion: false
+      enchants:
+        ARROW_DAMAGE: 0
+        ARROW_FIRE: 0
+        DAMAGE_ALL: 0
+        FIRE_ASPECT: 0
+        KNOCKBACK: 0
+        PROTECTION_ENVIRONMENTAL: 0
+        PROTECTION_FIRE: 0
+        THORNS: 0
 lb2:
   items_count: 10
   items:
@@ -148,8 +148,8 @@ lb2:
         PROTECTION_FIRE: 0
         THORNS: 0
     2:
-      item:
-      name:
+      item: null
+      name: null
       potion: false
       enchants:
         ARROW_DAMAGE: 0
@@ -162,7 +162,7 @@ lb2:
         THORNS: 0
     3:
       item:
-        name:
+        name: null
         potion: false
         enchants:
         ARROW_DAMAGE: 0
@@ -534,8 +534,8 @@ lb5:
   items_count: 10
   items:
     0:
-      item: DIAMOND_SWORD
-      name: god sword
+      item: 'DIAMOND_SWORD'
+      name: 'god sword'
       potion: false
       enchants:
         ARROW_DAMAGE: 0
