@@ -34,17 +34,42 @@ public final class Main extends JavaPlugin implements Listener {
     }
 
     @EventHandler(priority = EventPriority.NORMAL)
-    public void onKillPlayer(PlayerDeathEvent e){
+    public void luckyBlocksDrop(PlayerDeathEvent e){
         Player p = e.getEntity();
         Player killer = p.getKiller();
 
         if(killer != null){
+            int rand = (int) (Math.random()*5);
+            ItemStack itemStack;
             List<String> desc = new ArrayList<>();
-            desc.add(ChatColor.DARK_GRAY + "Выпадает: " + ChatColor.DARK_BLUE + "EPIC" + ChatColor.DARK_GRAY + "вещи");
-            desc.add(ChatColor.DARK_GRAY + "Выпадает: " + ChatColor.GOLD + "LEGENDARY" + ChatColor.DARK_GRAY + "вещи");
-            ItemStack itemStack = new ItemStack(setName( new ItemStack(Material.DIAMOND_BLOCK, 1, (short) 0), ChatColor.BLUE + "Lucky block lvl 5", desc));
+            switch (rand){
+                case (0):
+                    desc.add(ChatColor.DARK_GRAY + "Выпадает: " + ChatColor.GRAY + "COMMON" + ChatColor.DARK_GRAY + " вещи");
+                    itemStack = new ItemStack(setName(new ItemStack(Material.COAL_BLOCK, 1, (short) 0), ChatColor.GRAY + "Lucky block lvl 1", desc));
+                    break;
+                case (1):
+                    desc.add(ChatColor.DARK_GRAY + "Выпадает: " + ChatColor.GRAY + "COMMON" + ChatColor.DARK_GRAY + " вещи");
+                    desc.add(ChatColor.DARK_GRAY + "Выпадает: " + ChatColor.YELLOW + "RARE" + ChatColor.DARK_GRAY + " вещи");
+                    itemStack = new ItemStack(setName(new ItemStack(Material.IRON_BLOCK, 1, (short) 0),"Lucky block lvl 2", desc));
+                    break;
+                case (2):
+                    desc.add(ChatColor.DARK_GRAY + "Выпадает: " + ChatColor.YELLOW + "RARE" + ChatColor.DARK_GRAY + " вещи");
+                    desc.add(ChatColor.DARK_GRAY + "Выпадает: " + ChatColor.BLUE + "EPIC" + ChatColor.DARK_GRAY + " вещи");
+                    itemStack = new ItemStack(setName(new ItemStack(Material.GOLD_BLOCK, 1, (short) 0),"Lucky block lvl 3", desc));
+                    break;
+                case (3):
+                    desc.add(ChatColor.DARK_GRAY + "Выпадает: " + ChatColor.BLUE + "EPIC" + ChatColor.DARK_GRAY + " вещи");
+                    itemStack = new ItemStack(setName(new ItemStack(Material.DIAMOND_BLOCK, 1, (short) 0),"Lucky block lvl 4", desc));
+                    break;
+                case (4):
+                    desc.add(ChatColor.DARK_GRAY + "Выпадает: " + ChatColor.DARK_BLUE + "EPIC" + ChatColor.DARK_GRAY + " вещи");
+                    desc.add(ChatColor.DARK_GRAY + "Выпадает: " + ChatColor.GOLD + "LEGENDARY" + ChatColor.DARK_GRAY + " вещи");
+                    itemStack = new ItemStack(setName( new ItemStack(Material.NETHERITE_BLOCK, 1, (short) 0), ChatColor.BLUE + "Lucky block lvl 5", desc));
+                    break;
+                default:
+                    throw new IllegalStateException("Unexpected value: " + rand);
+            }
             killer.getInventory().addItem(itemStack);
-            killer.sendMessage("u get diamond");
         }
     }
 
@@ -57,7 +82,10 @@ public final class Main extends JavaPlugin implements Listener {
                 for(int i = 0; i < p.getInventory().getSize(); i++){
                     if(p.getInventory().getItem(i) != null){
                         if(Objects.requireNonNull(p.getInventory().getItem(i)).getType() == Material.DIAMOND_BLOCK){
-                            ItemStack d = new ItemStack(setName(new ItemStack(Material.DIAMOND_BLOCK, 1), ChatColor.BLUE + "Lucky block lvl 5"));
+                            List<String> desc = new ArrayList<>();
+                            desc.add(ChatColor.DARK_GRAY + "Выпадает: " + ChatColor.DARK_BLUE + "EPIC" + ChatColor.DARK_GRAY + " вещи");
+                            desc.add(ChatColor.DARK_GRAY + "Выпадает: " + ChatColor.GOLD + "LEGENDARY" + ChatColor.DARK_GRAY + " вещи");
+                            ItemStack d = new ItemStack(setName(new ItemStack(Material.DIAMOND_BLOCK, 1), ChatColor.BLUE + "Lucky block lvl 5", desc));
                             p.getInventory().removeItem(d);
                             break;
                         }
@@ -85,18 +113,18 @@ public final class Main extends JavaPlugin implements Listener {
                 }
                 */
                 int rand1 = (int) (Math.random()* getConfig().getInt("lb5.items_count"));
+
                 Material material = Material.valueOf(getConfig().getString("lb5.items." + rand1 + ".item"));
                 ItemStack item = setName(new ItemStack(material, 1), getConfig().getString("lb5.items." + rand1 + ".name"));
+                item.addUnsafeEnchantment(Enchantment.ARROW_DAMAGE, getConfig().getInt("lb5.items." + rand1 + ".enchants.ARROW_DAMAGE"));
+                item.addUnsafeEnchantment(Enchantment.ARROW_FIRE, getConfig().getInt("lb5.items." + rand1 + ".enchants.ARROW_FIRE"));
+                item.addUnsafeEnchantment(Enchantment.DAMAGE_ALL, getConfig().getInt("lb5.items." + rand1 + ".enchants.DAMAGE_ALL"));
+                item.addUnsafeEnchantment(Enchantment.FIRE_ASPECT, getConfig().getInt("lb5.items." + rand1 + ".enchants.FIRE_ASPECT"));
+                item.addUnsafeEnchantment(Enchantment.KNOCKBACK, getConfig().getInt("lb5.items." + rand1 + ".enchants.KNOCKBACK"));
+                item.addUnsafeEnchantment(Enchantment.PROTECTION_ENVIRONMENTAL, getConfig().getInt("lb5.items." + rand1 + ".enchants.PROTECTION_ENVIRONMENTAL"));
+                item.addUnsafeEnchantment(Enchantment.PROTECTION_FIRE, getConfig().getInt("lb5.items." + rand1 + ".enchants.PROTECTION_FIRE"));
+                item.addUnsafeEnchantment(Enchantment.THORNS, getConfig().getInt("lb5.items." + rand1 + ".enchants.THORNS"));
                 p.getInventory().addItem(item);
-                /*
-                for(int i = 0; i < getConfig().getInt("lb5.items_count"); i++){
-                    Material material = Material.valueOf(getConfig().getString("lb5.items." + i + "item"));
-                    ItemStack item = setName(new ItemStack(material, 1), getConfig().getString("lb5.items." + i + "name"));
-                    p.getInventory().addItem(item);
-                    break;
-                }
-                 */
-
             }
         }
     }
