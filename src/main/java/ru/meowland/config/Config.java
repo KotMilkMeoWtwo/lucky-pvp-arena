@@ -1,6 +1,5 @@
 package ru.meowland.config;
 
-import arc.Core;
 import org.yaml.snakeyaml.Yaml;
 
 import java.io.IOException;
