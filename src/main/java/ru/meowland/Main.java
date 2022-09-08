@@ -81,14 +81,39 @@ public final class Main extends JavaPlugin implements Listener {
                 p.sendMessage("meow");
                 for(int i = 0; i < p.getInventory().getSize(); i++){
                     if(p.getInventory().getItem(i) != null){
+                        List<String> desc = new ArrayList<>();
+                        ItemStack itemStack;
                         if(Objects.requireNonNull(p.getInventory().getItem(i)).getType() == Material.NETHERITE_BLOCK){
-                            List<String> desc = new ArrayList<>();
                             desc.add(ChatColor.DARK_GRAY + "Выпадают: " + ChatColor.BOLD + ChatColor.DARK_BLUE + "EPIC" + ChatColor.DARK_GRAY + " вещи");
                             desc.add(ChatColor.DARK_GRAY + "Выпадают: " + ChatColor.BOLD + ChatColor.GOLD + "LEGENDARY" + ChatColor.DARK_GRAY + " вещи");
-                            ItemStack d = new ItemStack(setName(new ItemStack(Material.NETHERITE_BLOCK, 1), ChatColor.BLUE + "Lucky block lvl 5", desc));
-                            p.getInventory().removeItem(d);
+                            itemStack = new ItemStack(setName(new ItemStack(Material.NETHERITE_BLOCK, 1), ChatColor.BLUE + "Lucky block lvl 5", desc));
+                            p.getInventory().removeItem(itemStack);
+                            break;
+                        } else if (Objects.requireNonNull(p.getInventory().getItem(i)).getType() == Material.COAL_BLOCK){
+                            desc.add(ChatColor.DARK_GRAY + "Выпадают: " + ChatColor.BOLD + ChatColor.GRAY + "COMMON" + ChatColor.DARK_GRAY + " вещи");
+                            itemStack = new ItemStack(setName(new ItemStack(Material.COAL_BLOCK, 1, (short) 0), ChatColor.GRAY + "Lucky block lvl 1", desc));
+                            p.getInventory().removeItem(itemStack);
+                            break;
+                        } else if (Objects.requireNonNull(p.getInventory().getItem(i)).getType() == Material.IRON_BLOCK) {
+                            desc.add(ChatColor.DARK_GRAY + "Выпадают: " + ChatColor.BOLD + ChatColor.GRAY + "COMMON" + ChatColor.DARK_GRAY + " вещи");
+                            desc.add(ChatColor.DARK_GRAY + "Выпадают: " + ChatColor.BOLD + ChatColor.YELLOW + "RARE" + ChatColor.DARK_GRAY + " вещи");
+                            itemStack = new ItemStack(setName(new ItemStack(Material.IRON_BLOCK, 1, (short) 0),"Lucky block lvl 2", desc));
+                            p.getInventory().removeItem(itemStack);
+                            break;
+                        } else if (Objects.requireNonNull(p.getInventory().getItem(i)).getType() == Material.GOLD_BLOCK) {
+                            desc.add(ChatColor.DARK_GRAY + "Выпадают: " + ChatColor.BOLD + ChatColor.YELLOW + "RARE" + ChatColor.DARK_GRAY + " вещи");
+                            desc.add(ChatColor.DARK_GRAY + "Выпадают: " + ChatColor.BOLD + ChatColor.BLUE + "EPIC" +ChatColor.DARK_GRAY + " вещи");
+                            itemStack = new ItemStack(setName(new ItemStack(Material.GOLD_BLOCK, 1, (short) 0),ChatColor.YELLOW + "Lucky block lvl 3", desc));
+                            p.getInventory().removeItem(itemStack);
+                            break;
+                        } else if (Objects.requireNonNull(p.getInventory().getItem(i)).getType() == Material.DIAMOND_BLOCK) {
+                            desc.add(ChatColor.DARK_GRAY + "Выпадают: " + ChatColor.BOLD + ChatColor.BLUE + "EPIC" + ChatColor.DARK_GRAY + " вещи");
+                            itemStack = new ItemStack(setName(new ItemStack(Material.DIAMOND_BLOCK, 1, (short) 0),"Lucky block lvl 4", desc));
+                            p.getInventory().removeItem(itemStack);
                             break;
                         }
+
+
                     }
 
                 }
