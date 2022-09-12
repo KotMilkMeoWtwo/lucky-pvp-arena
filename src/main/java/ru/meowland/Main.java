@@ -28,6 +28,7 @@ public final class Main extends JavaPlugin implements Listener {
         getConfig().options().copyDefaults(true);
         this.saveDefaultConfig();
         FileConfiguration config = getConfig();
+        getCommand("givelbb");
         getConfig();
         reloadConfig();
         this.getConfig();

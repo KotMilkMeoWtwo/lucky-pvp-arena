@@ -6,3 +6,8 @@ prefix: lbb
 authors: [ KotMilkMeoW ]
 description: game mode for minecraft
 website: meowland.ru
+
+commands:
+  givelbb:
+    permission: luckyblockbattle.givelbb
+    usage: /<command> [1-5]
