@@ -14,6 +14,7 @@ import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.plugin.java.JavaPlugin;
+import ru.meowland.cmds.GiveCmd;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,14 +22,13 @@ import java.util.Objects;
 
 public final class Main extends JavaPlugin implements Listener {
 
-    FileConfiguration config = getConfig();
     @Override
     public void onEnable() {
         getServer().getPluginManager().registerEvents(this, this);
         getConfig().options().copyDefaults(true);
         this.saveDefaultConfig();
         FileConfiguration config = getConfig();
-        getCommand("givelbb");
+        getCommand("givelbb").setExecutor(new GiveCmd());
         getConfig();
         reloadConfig();
         this.getConfig();
@@ -83,8 +83,10 @@ public final class Main extends JavaPlugin implements Listener {
                 for(int i = 0; i < p.getInventory().getSize(); i++){
                     if(p.getInventory().getItem(i) != null){
                         List<String> desc = new ArrayList<>();
+                        List<String> desc1 = new ArrayList<>();
                         ItemStack itemStack;
                         if(Objects.requireNonNull(p.getInventory().getItem(i)).getType() == Material.NETHERITE_BLOCK){
+
                             desc.add(ChatColor.DARK_GRAY + "Выпадают: " + ChatColor.BOLD + ChatColor.DARK_BLUE + "EPIC" + ChatColor.DARK_GRAY + " вещи");
                             desc.add(ChatColor.DARK_GRAY + "Выпадают: " + ChatColor.BOLD + ChatColor.GOLD + "LEGENDARY" + ChatColor.DARK_GRAY + " вещи");
                             itemStack = new ItemStack(setName(new ItemStack(Material.NETHERITE_BLOCK, 1), ChatColor.BLUE + "Lucky block lvl 5", desc));
@@ -102,6 +104,10 @@ public final class Main extends JavaPlugin implements Listener {
                             item.addUnsafeEnchantment(Enchantment.PROTECTION_ENVIRONMENTAL, getConfig().getInt("lb5.items." + rand1 + ".enchants.PROTECTION_ENVIRONMENTAL"));
                             item.addUnsafeEnchantment(Enchantment.PROTECTION_FIRE, getConfig().getInt("lb5.items." + rand1 + ".enchants.PROTECTION_FIRE"));
                             item.addUnsafeEnchantment(Enchantment.THORNS, getConfig().getInt("lb5.items." + rand1 + ".enchants.THORNS"));
+
+                            desc1.add(ChatColor.DARK_GRAY + "Выпадают: " + ChatColor.BOLD + ChatColor.DARK_BLUE + "EPIC" + ChatColor.DARK_GRAY + " вещи");
+                            desc1.add(ChatColor.DARK_GRAY + "Выпадают: " + ChatColor.BOLD + ChatColor.GOLD + "LEGENDARY" + ChatColor.DARK_GRAY + " вещи");
+                            p.getInventory().removeItem(new ItemStack(setName(new ItemStack(Material.NETHERITE_BLOCK, 1, (short) 0), ChatColor.GOLD + "Lucky block lvl 5", desc1)));
                             p.getInventory().addItem(item);
                             break;
                         } else if (Objects.requireNonNull(p.getInventory().getItem(i)).getType() == Material.COAL_BLOCK){
@@ -121,8 +127,9 @@ public final class Main extends JavaPlugin implements Listener {
                             item.addUnsafeEnchantment(Enchantment.PROTECTION_ENVIRONMENTAL, getConfig().getInt("lb1.items." + rand1 + ".enchants.PROTECTION_ENVIRONMENTAL"));
                             item.addUnsafeEnchantment(Enchantment.PROTECTION_FIRE, getConfig().getInt("lb1.items." + rand1 + ".enchants.PROTECTION_FIRE"));
                             item.addUnsafeEnchantment(Enchantment.THORNS, getConfig().getInt("lb1.items." + rand1 + ".enchants.THORNS"));
-                            p.getInventory().addItem(item);
 
+                            p.getInventory().removeItem(p.getItemOnCursor());
+                            p.getInventory().addItem(item);
                             break;
                         } else if (Objects.requireNonNull(p.getInventory().getItem(i)).getType() == Material.IRON_BLOCK) {
                             desc.add(ChatColor.DARK_GRAY + "Выпадают: " + ChatColor.BOLD + ChatColor.GRAY + "COMMON" + ChatColor.DARK_GRAY + " вещи");
@@ -142,8 +149,9 @@ public final class Main extends JavaPlugin implements Listener {
                             item.addUnsafeEnchantment(Enchantment.PROTECTION_ENVIRONMENTAL, getConfig().getInt("lb2.items." + rand1 + ".enchants.PROTECTION_ENVIRONMENTAL"));
                             item.addUnsafeEnchantment(Enchantment.PROTECTION_FIRE, getConfig().getInt("lb2.items." + rand1 + ".enchants.PROTECTION_FIRE"));
                             item.addUnsafeEnchantment(Enchantment.THORNS, getConfig().getInt("lb2.items." + rand1 + ".enchants.THORNS"));
-                            p.getInventory().addItem(item);
 
+                            p.getInventory().removeItem(p.getItemOnCursor());
+                            p.getInventory().addItem(item);
                             break;
                         } else if (Objects.requireNonNull(p.getInventory().getItem(i)).getType() == Material.GOLD_BLOCK) {
                             desc.add(ChatColor.DARK_GRAY + "Выпадают: " + ChatColor.BOLD + ChatColor.YELLOW + "RARE" + ChatColor.DARK_GRAY + " вещи");
@@ -163,8 +171,9 @@ public final class Main extends JavaPlugin implements Listener {
                             item.addUnsafeEnchantment(Enchantment.PROTECTION_ENVIRONMENTAL, getConfig().getInt("lb3.items." + rand1 + ".enchants.PROTECTION_ENVIRONMENTAL"));
                             item.addUnsafeEnchantment(Enchantment.PROTECTION_FIRE, getConfig().getInt("lb3.items." + rand1 + ".enchants.PROTECTION_FIRE"));
                             item.addUnsafeEnchantment(Enchantment.THORNS, getConfig().getInt("lb3.items." + rand1 + ".enchants.THORNS"));
-                            p.getInventory().addItem(item);
 
+                            p.getInventory().removeItem(p.getItemOnCursor());
+                            p.getInventory().addItem(item);
                             break;
                         } else if (Objects.requireNonNull(p.getInventory().getItem(i)).getType() == Material.DIAMOND_BLOCK) {
                             desc.add(ChatColor.DARK_GRAY + "Выпадают: " + ChatColor.BOLD + ChatColor.BLUE + "EPIC" + ChatColor.DARK_GRAY + " вещи");
@@ -183,36 +192,13 @@ public final class Main extends JavaPlugin implements Listener {
                             item.addUnsafeEnchantment(Enchantment.PROTECTION_ENVIRONMENTAL, getConfig().getInt("lb4.items." + rand1 + ".enchants.PROTECTION_ENVIRONMENTAL"));
                             item.addUnsafeEnchantment(Enchantment.PROTECTION_FIRE, getConfig().getInt("lb4.items." + rand1 + ".enchants.PROTECTION_FIRE"));
                             item.addUnsafeEnchantment(Enchantment.THORNS, getConfig().getInt("lb4.items." + rand1 + ".enchants.THORNS"));
-                            p.getInventory().addItem(item);
 
+                            p.getInventory().removeItem(p.getItemOnCursor());
+                            p.getInventory().addItem(item);
                             break;
                         }
-
-
                     }
-
                 }
-                /*
-                int rand = (int) (Math.random()*3);
-                ItemStack p0 = new ItemStack(Material.DIAMOND_SWORD, 1);
-                p0.addUnsafeEnchantment(Enchantment.DAMAGE_ALL, 3);
-                p0.addUnsafeEnchantment(Enchantment.FIRE_ASPECT, 2);
-                ItemStack p1 = new ItemStack(Material.DIAMOND_BOOTS, 1);
-                p1.addUnsafeEnchantment(Enchantment.PROTECTION_ENVIRONMENTAL, 1);
-                ItemStack p2 = new ItemStack(Material.DIAMOND_HELMET);
-                switch (rand){
-                    case (0):
-                        p.getInventory().addItem(p0);
-                        break;
-                    case (1):
-                        p.getInventory().addItem(p1);
-                        break;
-                    case (2):
-                        p.getInventory().addItem(p2);
-                        break;
-                }
-                */
-
             }
         }
     }
