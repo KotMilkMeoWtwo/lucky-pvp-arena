@@ -19,6 +19,7 @@ import ru.meowland.cmds.GiveCmd;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
+import java.util.logging.Logger;
 
 public final class Main extends JavaPlugin implements Listener {
 
@@ -45,27 +46,19 @@ public final class Main extends JavaPlugin implements Listener {
             List<String> desc = new ArrayList<>();
             switch (rand){
                 case (0):
-                    desc.add(ChatColor.DARK_GRAY + "Выпадают: " + ChatColor.BOLD + ChatColor.GRAY + "COMMON" + ChatColor.DARK_GRAY + " вещи");
-                    itemStack = new ItemStack(setName(new ItemStack(Material.COAL_BLOCK, 1, (short) 0), ChatColor.GRAY + "Lucky block lvl 1", desc));
+                    itemStack = Blocks.lb1();
                     break;
                 case (1):
-                    desc.add(ChatColor.DARK_GRAY + "Выпадают: " + ChatColor.BOLD + ChatColor.GRAY + "COMMON" + ChatColor.DARK_GRAY + " вещи");
-                    desc.add(ChatColor.DARK_GRAY + "Выпадают: " + ChatColor.BOLD + ChatColor.YELLOW + "RARE" + ChatColor.DARK_GRAY + " вещи");
-                    itemStack = new ItemStack(setName(new ItemStack(Material.IRON_BLOCK, 1, (short) 0),"Lucky block lvl 2", desc));
+                    itemStack = Blocks.lb2();
                     break;
                 case (2):
-                    desc.add(ChatColor.DARK_GRAY + "Выпадают: " + ChatColor.BOLD + ChatColor.YELLOW + "RARE" + ChatColor.DARK_GRAY + " вещи");
-                    desc.add(ChatColor.DARK_GRAY + "Выпадают: " + ChatColor.BOLD + ChatColor.BLUE + "EPIC" +ChatColor.DARK_GRAY + " вещи");
-                    itemStack = new ItemStack(setName(new ItemStack(Material.GOLD_BLOCK, 1, (short) 0),ChatColor.YELLOW + "Lucky block lvl 3", desc));
+                    itemStack = Blocks.lb3();
                     break;
                 case (3):
-                    desc.add(ChatColor.DARK_GRAY + "Выпадают: " + ChatColor.BOLD + ChatColor.BLUE + "EPIC" + ChatColor.DARK_GRAY + " вещи");
-                    itemStack = new ItemStack(setName(new ItemStack(Material.DIAMOND_BLOCK, 1, (short) 0),"Lucky block lvl 4", desc));
+                    itemStack = Blocks.lb4();
                     break;
                 case (4):
-                    desc.add(ChatColor.DARK_GRAY + "Выпадают: " + ChatColor.BOLD + ChatColor.DARK_BLUE + "EPIC" + ChatColor.DARK_GRAY + " вещи");
-                    desc.add(ChatColor.DARK_GRAY + "Выпадают: " + ChatColor.BOLD + ChatColor.GOLD + "LEGENDARY" + ChatColor.DARK_GRAY + " вещи");
-                    itemStack = new ItemStack(setName( new ItemStack(Material.NETHERITE_BLOCK, 1, (short) 0), ChatColor.GOLD + "Lucky block lvl 5", desc));
+                    itemStack = Blocks.lb5();
                     break;
                 default:
                     throw new IllegalStateException("Unexpected value: " + rand);
@@ -87,9 +80,7 @@ public final class Main extends JavaPlugin implements Listener {
                         ItemStack itemStack;
                         if(Objects.requireNonNull(p.getInventory().getItem(i)).getType() == Material.NETHERITE_BLOCK){
 
-                            desc.add(ChatColor.DARK_GRAY + "Выпадают: " + ChatColor.BOLD + ChatColor.DARK_BLUE + "EPIC" + ChatColor.DARK_GRAY + " вещи");
-                            desc.add(ChatColor.DARK_GRAY + "Выпадают: " + ChatColor.BOLD + ChatColor.GOLD + "LEGENDARY" + ChatColor.DARK_GRAY + " вещи");
-                            itemStack = new ItemStack(setName(new ItemStack(Material.NETHERITE_BLOCK, 1), ChatColor.BLUE + "Lucky block lvl 5", desc));
+                            itemStack = Blocks.lb5();
                             p.getInventory().removeItem(itemStack);
 
                             int rand1 = (int) (Math.random()* getConfig().getInt("lb5.items_count"));
@@ -111,8 +102,7 @@ public final class Main extends JavaPlugin implements Listener {
                             p.getInventory().addItem(item);
                             break;
                         } else if (Objects.requireNonNull(p.getInventory().getItem(i)).getType() == Material.COAL_BLOCK){
-                            desc.add(ChatColor.DARK_GRAY + "Выпадают: " + ChatColor.BOLD + ChatColor.GRAY + "COMMON" + ChatColor.DARK_GRAY + " вещи");
-                            itemStack = new ItemStack(setName(new ItemStack(Material.COAL_BLOCK, 1, (short) 0), ChatColor.GRAY + "Lucky block lvl 1", desc));
+                            itemStack = Blocks.lb1();
                             p.getInventory().removeItem(itemStack);
 
                             int rand1 = (int) (Math.random()* getConfig().getInt("lb1.items_count"));
@@ -132,9 +122,7 @@ public final class Main extends JavaPlugin implements Listener {
                             p.getInventory().addItem(item);
                             break;
                         } else if (Objects.requireNonNull(p.getInventory().getItem(i)).getType() == Material.IRON_BLOCK) {
-                            desc.add(ChatColor.DARK_GRAY + "Выпадают: " + ChatColor.BOLD + ChatColor.GRAY + "COMMON" + ChatColor.DARK_GRAY + " вещи");
-                            desc.add(ChatColor.DARK_GRAY + "Выпадают: " + ChatColor.BOLD + ChatColor.YELLOW + "RARE" + ChatColor.DARK_GRAY + " вещи");
-                            itemStack = new ItemStack(setName(new ItemStack(Material.IRON_BLOCK, 1, (short) 0),"Lucky block lvl 2", desc));
+                            itemStack = Blocks.lb2();
                             p.getInventory().removeItem(itemStack);
 
                             int rand1 = (int) (Math.random()* getConfig().getInt("lb2.items_count"));
@@ -154,9 +142,7 @@ public final class Main extends JavaPlugin implements Listener {
                             p.getInventory().addItem(item);
                             break;
                         } else if (Objects.requireNonNull(p.getInventory().getItem(i)).getType() == Material.GOLD_BLOCK) {
-                            desc.add(ChatColor.DARK_GRAY + "Выпадают: " + ChatColor.BOLD + ChatColor.YELLOW + "RARE" + ChatColor.DARK_GRAY + " вещи");
-                            desc.add(ChatColor.DARK_GRAY + "Выпадают: " + ChatColor.BOLD + ChatColor.BLUE + "EPIC" +ChatColor.DARK_GRAY + " вещи");
-                            itemStack = new ItemStack(setName(new ItemStack(Material.GOLD_BLOCK, 1, (short) 0),ChatColor.YELLOW + "Lucky block lvl 3", desc));
+                            itemStack = Blocks.lb3();
                             p.getInventory().removeItem(itemStack);
 
                             int rand1 = (int) (Math.random()* getConfig().getInt("lb3.items_count"));
@@ -176,8 +162,7 @@ public final class Main extends JavaPlugin implements Listener {
                             p.getInventory().addItem(item);
                             break;
                         } else if (Objects.requireNonNull(p.getInventory().getItem(i)).getType() == Material.DIAMOND_BLOCK) {
-                            desc.add(ChatColor.DARK_GRAY + "Выпадают: " + ChatColor.BOLD + ChatColor.BLUE + "EPIC" + ChatColor.DARK_GRAY + " вещи");
-                            itemStack = new ItemStack(setName(new ItemStack(Material.DIAMOND_BLOCK, 1, (short) 0),"Lucky block lvl 4", desc));
+                            itemStack = Blocks.lb4();
                             p.getInventory().removeItem(itemStack);
 
                             int rand1 = (int) (Math.random()* getConfig().getInt("lb4.items_count"));

@@ -8,9 +8,11 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
+import ru.meowland.Blocks;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Logger;
 
 public class GiveCmd implements CommandExecutor {
 
@@ -22,9 +24,11 @@ public class GiveCmd implements CommandExecutor {
         if(cmd.getName().equalsIgnoreCase("givelbb")){
             switch (args[0]){
                 case ("1"):
+                    /*
                     desc.add(ChatColor.DARK_GRAY + "Выпадают: " + ChatColor.BOLD + ChatColor.GRAY + "COMMON" + ChatColor.DARK_GRAY + " вещи");
                     itemStack = new ItemStack(setName(new ItemStack(Material.COAL_BLOCK, 1, (short) 0), ChatColor.GRAY + "Lucky block lvl 1", desc));
-                    player.getInventory().addItem(itemStack);
+                     */
+                    player.getInventory().addItem(/*itemStack*/Blocks.lb1());
                     player.sendMessage(ChatColor.GREEN + "Done");
                     break;
                 case ("2"):
